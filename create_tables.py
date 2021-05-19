@@ -1,4 +1,6 @@
 import psycopg2
+#import sqlalchemy
+#from sqlalchemy import create_engine
 from sql_queries import create_table_queries, drop_table_queries
 
 
@@ -9,7 +11,11 @@ def create_database():
     """
     
     # connect to default database
-    conn = psycopg2.connect("host=127.0.0.1 dbname=studentdb user=student password=student")
+    #conn = psycopg2.connect("host=127.0.0.1 dbname=studentdb user=student password=student gssencmode=disable")
+    #conn = psycopg2.connect("gssencmode=disable")
+    # psycopg2
+    #engine = create_engine('postgresql+psycopg2://evidence:samsung@localhost/studentdb')
+    #conn = psycopg2.connect("dbname=studentdb user=postgres password=unknown")
     conn.set_session(autocommit=True)
     cur = conn.cursor()
     
